@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisar Vagas</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="pesquisar">
+        <h1>Buscar Vagas</h1>
+        <form action="/pesquisar" method="GET">
+            <input type="text" name="titulo" placeholder="Digite o título da vaga">
+            <select name="local">
+                <option value="">Selecione a localização</option>
+                <option value="São Paulo">São Paulo</option>
+                <option value="Rio de Janeiro">Rio de Janeiro</option>
+                <option value="Belo Horizonte">Belo Horizonte</option>
+            </select>
+            <button type="submit">Pesquisar</button>
+        </form>
+        <div class="resultados">
+            {% if vagas %}
+                <ul>
+                    {% for vaga in vagas %}
+                        <li>
+                            <h2>{{ vaga['titulo'] }}</h2>
+                            <p>{{ vaga['nome_empresa'] }}</p>
+                            <p>{{ vaga['local'] }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Nenhuma vaga encontrada.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

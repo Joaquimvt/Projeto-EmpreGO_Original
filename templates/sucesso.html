@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Candidatura Enviada{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="text-center">Candidatura Enviada com Sucesso!</h1>
+            <p class="text-center">Obrigado, {{ nome }}. Sua candidatura foi recebida.</p>
+            
+            <p class="text-center">
+                <strong>Currículo enviado:</strong> {{ arquivo }}
+            </p>
+
+            <div class="d-flex justify-content-center">
+                <a href="/" class="btn btn-primary">Voltar para a Página Inicial</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head lang="pt-br">
+	  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Link do Bootstrap -->
+    <link rel="stylesheet" href="../static/bootstrap/css/lux.css">
+    <!-- Link do CSS próprio -->
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- Link para o Font Awesome -->
+    <!-- Link para o Font Awesome (CDN) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+
+
+  </head>
+  <body>
+    <!-- Cabeçalho -->
+     <div class="d-none d-md-block"></div>
+    <header>
+        {% include "header.html" %}
+    </header>
+  </div>
+    <!-- Corpo -->
+    <main class="container mt-5">{% block content %}{% endblock %}</main>
+
+        {% include "footer.html" %} 
+
+    <!-- Rodapé -->
+    
+
+    <!-- Scripts do Bootstrap -->
+    <script src="../static/bootstrap/js/bootstrap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}EmpreGO! - Currículos Recebidos{% endblock %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Currículos Recebidos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Currículos Recebidos</h1>
+        <div class="candidatos-list">
+            {% for candidato in candidatos %}
+                <div class="candidato">
+                    {{ candidato.nome }} - {{ candidato.email }} - {{ candidato.telefone }}
+                    <a class="download-btn" href="{{ candidato.curriculo }}" download>Baixar Currículo</a>
+                </div>
+            {% else %}
+                <p class="nenhum-candidato">Nenhum currículo enviado.</p>
+            {% endfor %}
+        </div>  
+    </div>
+</body>
+</html>
+
+{% endblock %}
